@@ -26,7 +26,7 @@ public class AccountHolder {
                 throw new IllegalArgumentException("Invalid account balance.");
             }
 
-            if(accountNumber == null || accountNumber.isBlank() || pin == null || pin.matches("\\d{4}")) {
+            if(accountNumber == null || accountNumber.isBlank() || pin == null || !pin.matches("\\d{4}")) {
                 throw new IllegalArgumentException("Account Number and a 4-digit PIN are required.");
             }
 
