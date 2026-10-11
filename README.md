@@ -3,7 +3,6 @@
 A console-based ATM Simulation System developed using Java. This project simulates basic ATM operations while demonstrating object-oriented programming, data encapsulation, authentication, input validation, and transaction management.
 
 ## Features
-
 * **User Authentication:** Login using an account number and PIN.
 * **Account Locking:** Locks the account after three consecutive failed login attempts.
 * **Withdraw Money:** Withdraw funds while maintaining the minimum balance.
@@ -57,7 +56,7 @@ ATM_Simulation/
 3. Compile the Java files:
 
    ```bash
-   javac flow_control/*.java
+   javac coreComponent/*.java
    ```
 
 4. Run the application:
