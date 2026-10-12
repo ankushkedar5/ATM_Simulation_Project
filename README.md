@@ -62,10 +62,9 @@ ATM_Simulation/
 4. Run the application:
 
    ```bash
-   java coreComponent.ATMSimulation
+   java coreComponent.ATMSimulation.java
    ```
 
-Replace the repository URL with your actual GitHub repository URL.
 
 ## Demo Credentials
 
