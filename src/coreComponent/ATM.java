@@ -14,7 +14,7 @@ public class ATM {
     }
 
     public void start() {
-        System.out.println("__________ WELCOME TO ATM SIMULATION__________");
+        System.out.println("\n__________ WELCOME TO ATM SIMULATION__________");
 
         while(running) {
             if(account.isLocked()) {
@@ -32,22 +32,22 @@ public class ATM {
     }
 
     private boolean login() {
-        System.out.println("__________Login__________");
+        //System.out.println("\n__________Login__________");
 
         while(running && !account.isLocked()) {
-            System.out.print("Enter account number: ");
+            System.out.print("\nEnter account number: ");
             String enteredAccount = scanner.nextLine().trim();
 
             System.out.print("Enter 4-digit PIN: ");
             String enteredPin = scanner.nextLine().trim();
             
             if(account.authenticate(enteredAccount, enteredPin)) {
-                System.out.println("\nLogin successful");
+                System.out.println("\nLogin successful...");
                 return true;
             }
 
             if(account.isLocked()) {
-                System.out.println("Account locked after 3 failed login attempts");
+                System.out.println("\nAccount locked after 3 failed login attempts");
                 running = false;
                 return false;
             }
@@ -87,7 +87,7 @@ public class ATM {
                     break;
                 case 5:
                     loggedIn = false;
-                    System.out.println("\nLogged out successfully");
+                    System.out.println("\nLogged out successfully...");
                     break;
                 case 6:
                     loggedIn = false;
@@ -103,7 +103,7 @@ public class ATM {
 
     private int readMenuChoice() {
         while(true) {
-            System.out.println("\nEnter your choice (1-6): ");
+            System.out.print("\nEnter your choice (1-6): ");
             String input = scanner.nextLine().trim();
 
             try{
@@ -116,14 +116,14 @@ public class ATM {
 
     private BigDecimal readAmount(String prompt) {
         while(true) {
-            System.out.println(prompt);
+            System.out.print(prompt);
             String input = scanner.nextLine().trim();
 
             try{
                 BigDecimal amount = new BigDecimal(input);
 
                 if(amount.scale() > 2) {
-                    System.out.println("Enter an amount with at most 2 decimal places");
+                    System.out.println("\nEnter an amount with at most 2 decimal places");
                     continue;
                 }
                 return amount;
@@ -134,7 +134,7 @@ public class ATM {
     }
 
     private void withdraw() {
-        BigDecimal amount = readAmount("Enter withdrawal amount: RS. ");
+        BigDecimal amount = readAmount("\nEnter withdrawal amount: RS. ");
 
         if(account.withdraw(amount)) {
             System.out.println("Withdrawal successful: Rs. " + amount);
@@ -146,7 +146,7 @@ public class ATM {
     }
 
     private void deposit() {
-        BigDecimal amount = readAmount("Enter deposit amount: Rs. ");
+        BigDecimal amount = readAmount("\nEnter deposit amount: Rs. ");
 
         if(account.deposit(amount)) {
             System.out.println("Deposit successful: Rs. " + amount);
@@ -158,6 +158,6 @@ public class ATM {
     }
 
     private void checkBalance() {
-        System.out.println("Current balance: Rs. " + account.getBalance());
+        System.out.println("\nCurrent balance: Rs. " + account.getBalance());
     }
 }
